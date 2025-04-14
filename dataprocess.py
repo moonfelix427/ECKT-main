@@ -687,15 +687,12 @@ class data_sampler_bert(object):
     def handletoken(self, raw_text, h_pos_li, t_pos_li, tokenizer, err):
         head_start, head_end = "<head>", "</head>"
         tail_start, tail_end = "<tail>", "</tail>"
-
         words = raw_text.strip().split()
         context_tokens = []
-
         h_mention, t_mention = [], []
 
         for idx, word in enumerate(words):
             word = word.lower()
-            # 插入标签前，确保先插入头尾标签，避免顺序问题和重叠问题
             if idx == h_pos_li[0]:
                 context_tokens.append(head_start)
             if idx == t_pos_li[0]:
