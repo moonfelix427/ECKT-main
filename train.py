@@ -250,7 +250,7 @@ def train_model_with_hard_neg(config, model, mem_set, traindata, epochs, current
         else:
             lossesfactor5 = 0.0
         lossesfactor6 = 0.0
-        lossesfactor7 = 0.5
+        lossesfactor7 = 0.8
         for step, (
         labels, neg_labels, sentences, firstent, firstentindex, secondent, secondentindex, headid, tailid, rawtext,
         lengths,
@@ -371,7 +371,7 @@ def train_memory(config, model, mem_set, train_set, epochs, current_proto, origi
         lossesfactor4 = 0.0
         lossesfactor5 = 1.0
         lossesfactor6 = 1.0
-        lossesfactor7 = 0.15
+        lossesfactor7 = 0.0
         for step, (
         labels, neg_labels, sentences, firstent, firstentindex, secondent, secondentindex, headid, tailid, rawtext,
         lengths, typelabels, masks, mask_pos) in enumerate(tqdm(data_loader)):
